@@ -1,8 +1,8 @@
 // Create global variables
     var scores = 0;
     var timeLeft = 120;
-    var questions = ["First questions?", "Second question?", "Third question?"]; // made of a string
-    var answersChoices = [["a","b","c","d"], ["a","b","c","d"], ["a","b","c","d"]]; // made of arrays of strings
+    var questions = ["What color is a black bear?", "You make a turn while hiking and suddenly you are 50 feet from a bear that sees you. What do you do?", "You're camping in bear country. What items do you not put in your bear container?"]; // made of a string
+    var answersChoices = [["Black","Brown","White","All of the above"], ["Turn and run!","Scream!","Play dead","Stand your ground and talk to the bear."], ["Granola Bars","Toothpaste","Bear Spray","Cooking Utensils"]]; // made of arrays of strings
     var correctAnswer = ["Answer 1", "Answer 2", "Answer 3"]; // made of strings
     var currentQuestion = 0;
 
@@ -11,7 +11,8 @@
 
 var questionsEl = document.querySelector("#question")
 
-
+//Start Quiz
+var startBtn = document.querySelector("#start-quiz")
 // Functions
 //ask.html
 function startQuiz() {
@@ -23,6 +24,8 @@ function startQuiz() {
     // hide the start button after "click"
     // reveal the questions
 }
+
+startBtn.addEventListener("start-quiz", startQuiz);
 
 function nextQuestion() {
     // triggered when the user selects an answer
