@@ -11,7 +11,6 @@
 
 var questionsEl = document.querySelector("#question")
 
-//Start Quiz
 
 // Functions
 //ask.html
@@ -25,6 +24,7 @@ function startQuiz() {
     // reveal the questions
 }
 
+//linked to the start button
 startBtn.addEventListener("start-quiz", startQuiz);
 
 var startBtn = document.querySelector("#start-quiz")

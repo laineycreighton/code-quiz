@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bear Safety Quiz</title>
     <link rel="stylesheet" href="./assets/css/ask.css">
 </head>
+
 <body>
+    <!-------------------------------NAV------------------------------->
     <nav>
-        <a href="./assets/html/scores.html">View High Scores</a>
+        <!------------------SCORES LINK------------------>
+        <div>
+            <!--linked to the scores.html for the questions section-->
+            <li><a href="./assets/html/scores.html">View High Scores</a></li>
+        </div>
+        <!---------------------TIMER--------------------->
+        <div>
+            <li id="timer">Timer :</li>
+        </div>
     </nav>
-    <h1 id="question"></h1>
-    <ul>
-        <li><a href="#answer1"></a>a. </li>
-        <li><a href="#answer2"></a>b. </li>
-        <li><a href="#answer3"></a>c. </li>
-        <li><a href="#answer4"></a>d. </li>
-    </ul>
+    <div>
+        <h1 id="question"></h1>
+        <ul>
+            <li><a href="#answer1"></a>a. </li>
+            <li><a href="#answer2"></a>b. </li>
+            <li><a href="#answer3"></a>c. </li>
+            <li><a href="#answer4"></a>d. </li>
+        </ul>
+    </div>
+    <div id="bear-attack"></div>
     <script src="./assets/js/ask.js"></script>
 </body>
+
 </html>
