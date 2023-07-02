@@ -5,21 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bear Safety Quiz</title>
-    <link ref="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <nav>
-        <a href="./assets/html/scores.html">View High Scores</a>
+        <div>
+            <li><a href="./assets/html/scores.html">View High Scores</a></li>
+        </div>
+        <div>
+            <li>Timer :</li>
+        </div>
     </nav>
     <header>
-        <h1>Bear Safety</h1>
-        <h2>Quiz</h2>
+        <h1>Bear Safety Quiz</h1>
     </header>
     <section>
-        Do you know how to handle a bear encounter?
+        <img src="./assets/images/bear.png" alt="a grizzly bear">
+        <p>
+            Do you know how to handle a bear encounter?
+        </p>
     </section>
-    <div>
+    <div class="start-button">
         <a href="./assets/html/ask.html"><button id="start-quiz">Start Quiz</button></a>
     </div>
     <script src="./assets/js/script.js"></script>

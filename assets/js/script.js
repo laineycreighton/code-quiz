@@ -12,7 +12,7 @@
 var questionsEl = document.querySelector("#question")
 
 //Start Quiz
-var startBtn = document.querySelector("#start-quiz")
+
 // Functions
 //ask.html
 function startQuiz() {
@@ -27,32 +27,10 @@ function startQuiz() {
 
 startBtn.addEventListener("start-quiz", startQuiz);
 
-function nextQuestion() {
-    // triggered when the user selects an answer
-    // accept the event ("click") parameter to know which answer the user clicked
-    // determine if the answer is right or wrong
-        // if else statements
-        // if wrong, adjust time
-        // if right, add to score
-    // increment the current question by 1
-    // display next question and choices element
-}
-
-function endQuiz () {
-    // triggered when timer ends OR last question is answered
-    // hide questions
-    // display the score and prompt user for initials
-    // stop the timer
-}
-
-// scores.html
-function highScores() {
-    // triggered when user submits their initals
-    // save score and initials in local storage
-            // read existing scores - var
-            // add new score - to the end of the existing scores var/array
-            // overwrite the scores with the new array (push, pop, etc - study)
-    // display high score page
-}
-
+var startBtn = document.querySelector("#start-quiz")
 // eventListener to call the startQuiz function with the "start" button
+
+
+
+
+
