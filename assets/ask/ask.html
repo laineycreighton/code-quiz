@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bear Safety Quiz</title>
-    <link rel="stylesheet" type="text/css" href="ask.css">
+    <link rel="stylesheet" type="text/css" href="../ask/ask.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <!------------------SCORES LINK------------------>
         <div>
             <!--linked to the scores.html for the questions section-->
-            <li><a href="./assets/html/scores.html" id="view-scores">View High Scores</a></li>
+            <li><a href="../scores/scores.html" id="view-scores">View High Scores</a></li>
         </div>
         <!---------------------TIMER--------------------->
         <div>
@@ -23,13 +23,16 @@
     </nav>
     <div>
         <!---------------------QUESTIONS--------------------->
-        <h1 id="question"></h1>
-        <ul>
-            <li><a href="#answera"></a>a. </li>
-            <li><a href="#answerb"></a>b. </li>
-            <li><a href="#answerc"></a>c. </li>
-            <li><a href="#answerd"></a>d. </li>
-        </ul>
+        <div id="question">
+            <h1></h1>
+            <ul>
+                <li><a href="#answera" id="answera"></a>a. </li>
+                <li><a href="#answerb" id="answerb"></a>b. </li>
+                <li><a href="#answerc" id="answerc"></a>c. </li>
+                <li><a href="#answerd" id="answerd"></a>d. </li>
+            </ul>
+        </div>
+        <!----------------------BUTTON---------------------->
         <div class="submit-button">
             <button>Submit</button>
         </div>
@@ -39,7 +42,7 @@
     <div id="bear-attack"></div>
 
     <!--linked to the script.js for the starter functions-->
-    <script src="/assets/js/script.js"></script>
+    <script src="../ask/script.js"></script>
 </body>
 
 </html>

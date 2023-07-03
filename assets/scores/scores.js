@@ -7,3 +7,10 @@ function highScores() {
             // overwrite the scores with the new array (push, pop, etc - study)
     // display high score page
 }
+
+function endQuiz() {
+    // triggered when timer ends OR last question is answered
+    // hide questions
+    // display the score and prompt user for initials
+    // stop the timer
+}
