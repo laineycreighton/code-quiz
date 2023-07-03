@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear Safety Quiz</title>
+    <link rel="stylesheet" type="text/css" href="ask.css">
+</head>
+
+<body>
+    <!-------------------------------NAV------------------------------->
+    <nav>
+        <!------------------SCORES LINK------------------>
+        <div>
+            <!--linked to the scores.html for the questions section-->
+            <li><a href="./assets/html/scores.html" id="view-scores">View High Scores</a></li>
+        </div>
+        <!---------------------TIMER--------------------->
+        <div>
+            <li id="timer">Timer :</li>
+        </div>
+    </nav>
+    <div>
+        <!---------------------QUESTIONS--------------------->
+        <h1 id="question"></h1>
+        <ul>
+            <li><a href="#answera"></a>a. </li>
+            <li><a href="#answerb"></a>b. </li>
+            <li><a href="#answerc"></a>c. </li>
+            <li><a href="#answerd"></a>d. </li>
+        </ul>
+        <div class="submit-button">
+            <button>Submit</button>
+        </div>
+    </div>
+    <!---------------------ATTACK IMAGE--------------------->
+    <!--this image displays when time runs out-->
+    <div id="bear-attack"></div>
+
+    <!--linked to the script.js for the starter functions-->
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>

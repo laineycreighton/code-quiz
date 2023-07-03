@@ -12,6 +12,15 @@ nav {
     margin: 50px;
 }
 
+#view-scores {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    outline: red solid 2px;
+    color: black;
+    border-radius: 10px;
+}
+
 /*--------------------------HEADER--------------------------*/
 header {
     display: flex;

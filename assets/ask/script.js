@@ -1,9 +1,30 @@
-// Create global variables
+// Create global variables 
+/*
     var scores = 0;
     var questions = ["What color is a black bear?", "You make a turn while hiking and suddenly you are 50 feet from a bear that sees you. What is the first thing that you do?", "You're camping in bear country. What items do you not put in your bear container?"]; // made of a string
     var answersChoices = [["Black","Brown","White","All of the above"], ["Turn and run!","Scream!","Play dead","Stand your ground and talk to the bear."], ["Granola Bars","Toothpaste","Bear Spray","Cooking Utensils"]]; // made of arrays of strings
     var correctAnswer = ["All of the above", "Stand your ground and talk to the bear.", "Bear Spray"]; // made of strings
     var currentQuestion = 0;
+   */ 
+
+var questions = [
+    {
+        questionText: "What color is a black bear?",
+        answersChoices: ["Black","Brown","White","All of the above"],
+        correctAnswer: 3,
+    },
+    {
+        questionText: "You make a turn while hiking and suddenly you are 50 feet from a bear that sees you. What is the first thing that you do?",
+        answersChoices: ["Turn and run!","Scream!","Stand your ground and talk to the bear.","Play dead"],
+        correctAnswer: 2,
+    },
+    {
+        questionText: "You're camping in bear country. What items do you not put in your bear container?",
+        answersChoices: ["Bear Spray", "Granola Bars","Toothpaste","Cooking Utensils"],
+        correctAnswer: 0,
+    }
+
+];
 
 // HTML selectors
 //the id of each question
