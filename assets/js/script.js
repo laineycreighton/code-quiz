@@ -105,7 +105,7 @@ function endQuiz() {
     var score = timeLeft;
 
     //hide the questions to display score submission form
-    questionsEl.computedStyleMap.display = "none";
+    questionsEl.style.display = "none";
     var form = document.createElement("form");
     var submitName = document.createElement("name");
     submitName.textContent = "Name: ";
@@ -124,6 +124,16 @@ function endQuiz() {
 
         console.log("Initials: " + initails);
         console.log("Score: ", + score);
+
+        //store the score submissions to local storage
+        var storeScores = {
+            initials: initails,
+            score: score
+        };
+        localStorage.setItem("quizScore", JSON.stringify(storeScores));
+
+        //redirect the user to the high scores page after submitting score
+        window.location.href = "../assets/html/scores.html";
     })
 }
 
