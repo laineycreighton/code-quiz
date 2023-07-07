@@ -98,10 +98,33 @@ if (currentQuestionIndex < questions.length) {
 /*----------------------------------------END QUIZ FUNCTION----------------------------------------*/
 function endQuiz() {
     console.log("Quiz ended!");
+    //stops the timer when the quiz is over
     clearInterval(timer);
-    //add form for initials
-    //submit and view high scores button
-    //localStorage setItem
+
+    //variable for the value of the score
+    var score = timeLeft;
+
+    //hide the questions to display score submission form
+    questionsEl.computedStyleMap.display = "none";
+    var form = document.createElement("form");
+    var submitName = document.createElement("name");
+    submitName.textContent = "Name: ";
+    var nameInput = document.createElement("input");
+    nameInput.setAttribute("type", "text");
+    var submitBtn = document.createElement("button");
+    submitBtn.textContent = "SUBMIT";
+    form.appendChild(submitName);
+    form.appendChild(nameInput);
+    form.appendChild(submitBtn);
+    questionsEl.parentNode.appendChild(form);
+
+    form.addEventListener('submit', function(event){
+        event.preventDefault();
+        var initails = nameInput.value;
+
+        console.log("Initials: " + initails);
+        console.log("Score: ", + score);
+    })
 }
 
 /*----------------------------------------START TIMER FUNCTION----------------------------------------*/
