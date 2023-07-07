@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bear Safety Quiz</title>
     <link rel="stylesheet" type="text/css" href="../css/scores.css">
 </head>
+
 <body>
-    <h1>High Scores</h1>
-<ul id="high-scores"></ul>
+    <h1>Quiz High Scores</h1>
+    <div class="score-container">
+        <section class="your-score">
+            <h2>Your Score</h2>
+            <div id="user-score">
+                <p>Name: <span id="initials"></span></p>
+                <p>Score: <span id="score"></span></p>
+            </div>
+        </section>
+        <section class="high-scores">
+            <h2>High Scores</h2>
+            <ul id="high-scores"></ul>
+        </section>
+    </div>
     <script src="../js/scores.js"></script>
 </body>
+
 </html>

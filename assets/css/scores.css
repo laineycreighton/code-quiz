@@ -1,8 +1,80 @@
+/*----------------------------------------BODY----------------------------------------*/
 body {
     background-color: whitesmoke;
 }
 
+/*--------------------HEADER--------------------*/
 h1 {
     display: flex;
     justify-content: center;
+}
+
+/*----------------------------------------SCORE CARD----------------------------------------*/
+.score-container {
+    outline: red solid 5px;
+    background-color: rgba(255, 0, 0, 0.539);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+/*--------------------YOUR SCORE--------------------*/
+.your-score {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px 30px 0 0;
+}
+
+.your-score h2 {
+    border-bottom: red solid 5px;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 10px;
+    border-radius: 30px 30px 0 0;
+}
+
+.your-score div {
+    display: flex;
+    justify-content: space-around;
+    background-color: whitesmoke;
+    font-size: 20px;
+}
+
+/*--------------------HIGH SCORE--------------------*/
+
+.high-scores {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 30px 30px;
+}
+
+.high-scores h2 {
+    border-bottom: red solid 5px;
+    border-top: red solid 5px;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 10px;
+}
+
+.high-scores ul {
+    background-color: whitesmoke;
+    font-size: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 0 0 30px 30px;
+}
+
+.high-scores ul li {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: whitesmoke;
+    font-size: 20px;
+    padding: 5px;
 }

@@ -1,4 +1,4 @@
-// get the stored scores
+/*------------------STORED SCORES------------------*/
 var storeScores = localStorage.getItem("quizScore");
 
 if (storeScores) {
@@ -10,6 +10,7 @@ if (storeScores) {
     console.log("Score: " + score);
 }
 
+/*----------------------------------------HIGH SCORES FUNCTION----------------------------------------*/
 function highScores() {
     var existingScores = localStorage.getItem("scores");
 
@@ -43,3 +44,6 @@ function highScores() {
         highScoresDisplay.appendChild(scoreEntry);
     }
 }
+
+/*----------------------------------------CALL HIGH SCORES FUNCTION----------------------------------------*/
+highScores();
