@@ -7,13 +7,13 @@ var questions = [
     },
     {
         questionText: "You make a turn while hiking and suddenly you are 50 feet from a bear that sees you. What is the first thing that you do?",
-        answersChoices: ["Turn and run!", "Scream!", "Stand your ground and talk to the bear.", "Play dead"],
-        correctAnswer: 2,
+        answersChoices: ["Turn and run!", "Scream!", "Play dead", "Stand your ground and talk to the bear."],
+        correctAnswer: 3,
     },
     {
         questionText: "You're camping in bear country. What items do you not put in your bear container?",
-        answersChoices: ["Bear Spray", "Granola Bars", "Toothpaste", "Cooking Utensils"],
-        correctAnswer: 0,
+        answersChoices: ["Granola Bars", "Toothpaste", "Cooking Utensils", "Bear Spray"],
+        correctAnswer: 3,
     }
 
 ];
@@ -53,10 +53,10 @@ function displayQuestion() {
 
     questionsEl.querySelector('h1').textContent = currentQuestion.questionText;
 
-   choiceA.textContent = currentQuestion.answersChoices[0];
-   choiceA.textContent = currentQuestion.answersChoices[1];
-   choiceA.textContent = currentQuestion.answersChoices[2];
-   choiceA.textContent = currentQuestion.answersChoices[3];
+   choiceA.textContent = "a. " + currentQuestion.answersChoices[0];
+   choiceB.textContent = "b. " + currentQuestion.answersChoices[1];
+   choiceC.textContent = "c. " + currentQuestion.answersChoices[2];
+   choiceD.textContent = "d. " + currentQuestion.answersChoices[3];
 }
 
 /*----------------------------------------CHECK ANSWER FUNCTION----------------------------------------*/
@@ -77,8 +77,14 @@ function checkAnswer(event) {
 
 if (selectedChoiceIndex === currentQuestion.correctAnswer) {
     console.log("Correct answer!");
+
 } else {
     console.log("Incorrect answer!");
+    //deduct 20 seconds from the timer
+    timeLeft -= 20;
+    if (timeLeft < 0) {
+        timeLeft = 0;
+    }
 }
 
 currentQuestionIndex++;
@@ -89,6 +95,15 @@ if (currentQuestionIndex < questions.length) {
 }
 }
 
+/*----------------------------------------END QUIZ FUNCTION----------------------------------------*/
+function endQuiz() {
+    console.log("Quiz ended!");
+    clearInterval(timer);
+    //add form for initials
+    //submit and view high scores button
+    //localStorage setItem
+}
+
 /*----------------------------------------START TIMER FUNCTION----------------------------------------*/
 
 /*------------------QUERY SELECTORS------------------*/
@@ -97,9 +112,6 @@ var timerEl = document.querySelector("#timer");
 
 /*--------------------VARIABLES--------------------*/
 var timeLeft = 60
-
-/*-----------------EVENT LISTENERS-----------------*/
-
 
 function startTimer() {
     console.log("Time Begins Now");

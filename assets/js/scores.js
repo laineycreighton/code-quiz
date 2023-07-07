@@ -6,11 +6,6 @@ function highScores() {
             // add new score - to the end of the existing scores var/array
             // overwrite the scores with the new array (push, pop, etc - study)
     // display high score page
+    //localStorage getItem
 }
 
-function endQuiz() {
-    // triggered when timer ends OR last question is answered
-    // hide questions
-    // display the score and input (not prompt) user for initials
-    // stop the timer
-}
