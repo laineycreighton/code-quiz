@@ -1,5 +1,7 @@
 /*------------------STORED SCORES------------------*/
 var storeScores = localStorage.getItem("quizScore");
+var initials = "";
+var score = "";
 
 if (storeScores) {
     var scoreData = JSON.parse(storeScores);
