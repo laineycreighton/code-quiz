@@ -10,6 +10,12 @@ if (storeScores) {
     console.log("Score: " + score);
 }
 
+var initialDisplay = document.querySelector("#initials");
+initialDisplay.textContent = initials;
+
+var scoreDisplay = document.querySelector("#score");
+scoreDisplay.textContent = score;
+
 /*----------------------------------------HIGH SCORES FUNCTION----------------------------------------*/
 function highScores() {
     var existingScores = localStorage.getItem("scores");
