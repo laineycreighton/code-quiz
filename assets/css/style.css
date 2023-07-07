@@ -8,8 +8,8 @@ nav {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-    font-size: 40px;
-    margin: 50px;
+    font-size: 30px;
+    margin: 30px;
 }
 
 #view-scores {
@@ -25,16 +25,17 @@ nav {
 header {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
-    font-size: 60px;
+    margin-top: 40px;
+    font-size: 40px;
 }
 
 /*------------------------BEAR IMAGE------------------------*/
 img {
     display: block;
+    margin-top: 0;
     margin-right: auto;
     margin-left: auto;
-    width: 800px;
+    width: 450px;
     height: auto;
 }
 

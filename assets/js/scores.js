@@ -11,6 +11,6 @@ function highScores() {
 function endQuiz() {
     // triggered when timer ends OR last question is answered
     // hide questions
-    // display the score and prompt user for initials
+    // display the score and input (not prompt) user for initials
     // stop the timer
 }

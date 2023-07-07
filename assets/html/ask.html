@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bear Safety Quiz</title>
-    <link rel="stylesheet" type="text/css" href="../ask/ask.css">
+    <link rel="stylesheet" type="text/css" href="../css/ask.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <!------------------SCORES LINK------------------>
         <div>
             <!--linked to the scores.html for the questions section-->
-            <li><a href="../scores/scores.html" id="view-scores">View High Scores</a></li>
+            <li><a href="../html/scores.html" id="view-scores">View High Scores</a></li>
         </div>
         <!---------------------TIMER--------------------->
         <div>
@@ -26,15 +26,13 @@
         <div id="question">
             <h1></h1>
             <ul>
-                <li><a href="#answera" id="answera"></a>a. </li>
-                <li><a href="#answerb" id="answerb"></a>b. </li>
-                <li><a href="#answerc" id="answerc"></a>c. </li>
-                <li><a href="#answerd" id="answerd"></a>d. </li>
+                <!--change to button, not anchor-->
+                <!--add eventListener to buttons-->
+                <li><button id="choice-a">a. </button></li>
+                <li><button id="choice-b">b. </button></li>
+                <li><button id="choice-c">c. </button></li>
+                <li><button id="choice-d">d. </button></li>
             </ul>
-        </div>
-        <!----------------------BUTTON---------------------->
-        <div class="submit-button">
-            <button>Submit</button>
         </div>
     </div>
     <!---------------------ATTACK IMAGE--------------------->
@@ -42,7 +40,7 @@
     <div id="bear-attack"></div>
 
     <!--linked to the script.js for the starter functions-->
-    <script src="../ask/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
