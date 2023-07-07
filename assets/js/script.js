@@ -34,6 +34,7 @@ choiceC.addEventListener('click', checkAnswer);
 choiceD.addEventListener('click', checkAnswer);
 
 var currentQuestionIndex = 0;
+var timer;
 
 function startQuiz() {
     console.log("Quiz Started");
@@ -53,10 +54,10 @@ function displayQuestion() {
 
     questionsEl.querySelector('h1').textContent = currentQuestion.questionText;
 
-   choiceA.textContent = "a. " + currentQuestion.answersChoices[0];
-   choiceB.textContent = "b. " + currentQuestion.answersChoices[1];
-   choiceC.textContent = "c. " + currentQuestion.answersChoices[2];
-   choiceD.textContent = "d. " + currentQuestion.answersChoices[3];
+    choiceA.textContent = "a. " + currentQuestion.answersChoices[0];
+    choiceB.textContent = "b. " + currentQuestion.answersChoices[1];
+    choiceC.textContent = "c. " + currentQuestion.answersChoices[2];
+    choiceD.textContent = "d. " + currentQuestion.answersChoices[3];
 }
 
 /*----------------------------------------CHECK ANSWER FUNCTION----------------------------------------*/
@@ -75,31 +76,29 @@ function checkAnswer(event) {
         selectedChoiceIndex = 3;
     }
 
-if (selectedChoiceIndex === currentQuestion.correctAnswer) {
-    console.log("Correct answer!");
-
-} else {
-    console.log("Incorrect answer!");
-    //deduct 20 seconds from the timer
-    timeLeft -= 20;
-    if (timeLeft < 0) {
-        timeLeft = 0;
+    if (selectedChoiceIndex === currentQuestion.correctAnswer) {
+        console.log("Correct answer!");
+    } else {
+        console.log("Incorrect answer!");
+        //deduct 20 seconds from the timer
+        timeLeft -= 20;
+        if (timeLeft < 0) {
+            timeLeft = 0;
+        }
     }
-}
 
-currentQuestionIndex++;
-if (currentQuestionIndex < questions.length) {
-    displayQuestion();
-} else {
-    endQuiz();
-}
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+    } else {
+        clearInterval(timer);
+        endQuiz();
+    }
 }
 
 /*----------------------------------------END QUIZ FUNCTION----------------------------------------*/
 function endQuiz() {
     console.log("Quiz ended!");
-    //stops the timer when the quiz is over
-    clearInterval(timer);
 
     //variable for the value of the score
     var score = timeLeft;
@@ -118,22 +117,23 @@ function endQuiz() {
     form.appendChild(submitBtn);
     questionsEl.parentNode.appendChild(form);
 
-    form.addEventListener('submit', function(event){
+    form.addEventListener('submit', function (event) {
         event.preventDefault();
-        var initails = nameInput.value;
 
-        console.log("Initials: " + initails);
+        var initials = nameInput.value;
+
+        console.log("Initials: " + initials);
         console.log("Score: ", + score);
 
         //store the score submissions to local storage
         var storeScores = {
-            initials: initails,
+            initials: initials,
             score: score
         };
         localStorage.setItem("quizScore", JSON.stringify(storeScores));
 
         //redirect the user to the high scores page after submitting score
-        window.location.href = "../assets/html/scores.html";
+        window.location.href = "../html/scores.html";
     })
 }
 
@@ -148,7 +148,7 @@ var timeLeft = 60
 
 function startTimer() {
     console.log("Time Begins Now");
-    var timer = setInterval(function () {
+    timer = setInterval(function () {
         timeLeft--;
         timerEl.textContent = "Timer: " + timeLeft + " seconds remaining.";
         if (timeLeft === 0) {

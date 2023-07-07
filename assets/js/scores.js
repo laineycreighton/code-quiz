@@ -1,4 +1,14 @@
 // scores.html
+var storeScores = localStorage.getItem("quizScore");
+if (scoreData) {
+    scoreData = JSON.parse(scoreData);
+    var initials = scoreData.initials;
+    var score = scoreData.score;
+
+    console.log("Initials: " + initials);
+        console.log("Score: ", + score);
+}
+
 function highScores() {
     // triggered when user submits their initals
     // save score and initials in local storage
