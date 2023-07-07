@@ -22,10 +22,18 @@ var questions = [
 
 /*------------------QUERY SELECTORS------------------*/
 var questionsEl = document.querySelector("#question");
+var choiceA = document.querySelector("#choice-a");
+var choiceB = document.querySelector("#choice-b");
+var choiceC = document.querySelector("#choice-c");
+var choiceD = document.querySelector("#choice-d");
 
 /*-----------------EVENT LISTENERS-----------------*/
-// eventListener to call the startQuiz function with the "start" button
-// add eventListeners to answer buttons
+choiceA.addEventListener('click', checkAnswer);
+choiceB.addEventListener('click', checkAnswer);
+choiceC.addEventListener('click', checkAnswer);
+choiceD.addEventListener('click', checkAnswer);
+
+var currentQuestionIndex = 0;
 
 function startQuiz() {
     console.log("Quiz Started");
@@ -35,46 +43,57 @@ function startQuiz() {
     displayQuestion();
 }
 
+/*----------------------------------------DISPLAY QUESTION FUNCTION----------------------------------------*/
 function displayQuestion() {
-    var currentQuestionIndex = 0;
     var currentQuestion = questions[currentQuestionIndex];
 
     console.log(currentQuestion.questionText);
     console.log(currentQuestion.answersChoices);
     console.log(currentQuestion.correctAnswer);
 
-    questionsEl.textContent = currentQuestion.questionText;
+    questionsEl.querySelector('h1').textContent = currentQuestion.questionText;
 
-    //not sure about this one. look into it!!!!
-    for (var i = 0; i < currentQuestion.answersChoices.length; i++) {
-        var answerChoice = currentQuestion.answersChoices[i];
-    } if(answerChoice === correctAnswer){
-        return true;
-    } else {
+   choiceA.textContent = currentQuestion.answersChoices[0];
+   choiceA.textContent = currentQuestion.answersChoices[1];
+   choiceA.textContent = currentQuestion.answersChoices[2];
+   choiceA.textContent = currentQuestion.answersChoices[3];
+}
 
+/*----------------------------------------CHECK ANSWER FUNCTION----------------------------------------*/
+function checkAnswer(event) {
+    var selectedChoice = event.target;
+    var currentQuestion = questions[currentQuestionIndex];
+    var selectedChoiceIndex;
+
+    if (selectedChoice === choiceA) {
+        selectedChoiceIndex = 0;
+    } else if (selectedChoice === choiceB) {
+        selectedChoiceIndex = 1;
+    } else if (selectedChoice === choiceC) {
+        selectedChoiceIndex = 2;
+    } else if (selectedChoice === choiceD) {
+        selectedChoiceIndex = 3;
     }
+
+if (selectedChoiceIndex === currentQuestion.correctAnswer) {
+    console.log("Correct answer!");
+} else {
+    console.log("Incorrect answer!");
 }
 
-/*----------------------------------------NEXT QUESTION FUNCTION----------------------------------------*/
-function nextQuestion() {
-    // triggered when the user selects an answer
-    // accept the event ("click") parameter to know which answer the user clicked
-    // determine if the answer is right or wrong
-    // if else statements
-    // if wrong, adjust time
-    // if right, add to score
-    // increment the current question by 1
-    // display next question and choices element
+currentQuestionIndex++;
+if (currentQuestionIndex < questions.length) {
+    displayQuestion();
+} else {
+    endQuiz();
 }
-
+}
 
 /*----------------------------------------START TIMER FUNCTION----------------------------------------*/
 
 /*------------------QUERY SELECTORS------------------*/
 //this var calls the "timer" id from the ask.html
 var timerEl = document.querySelector("#timer");
-// this var calls the "bear-attack" image from the ask.html
-var timeEnds = document.querySelector("bear-attack");
 
 /*--------------------VARIABLES--------------------*/
 var timeLeft = 60
@@ -89,21 +108,12 @@ function startTimer() {
         timerEl.textContent = "Timer: " + timeLeft + " seconds remaining.";
         if (timeLeft === 0) {
             clearInterval(timer);
-            sendMessage();
+            endQuiz();
         }
     }, 1000);
 }
 
-/*----------------------------------------TIMER ENDS FUNCTION----------------------------------------*/
-function sendMessage() {
-    console.log("Time's Up!");
-    timerEl.textContent = "Time's Up!";
-    var attackImg = document.createElement('<img>');
-    attackImg.setAttribute("src", "images/bear-attack.png");
-    timeEnds.appendChild(attackImg);
-    endQuiz();
-}
-
+/*----------------------------------------CALL START QUIZ FUNCTION----------------------------------------*/
 
 startQuiz();
 
