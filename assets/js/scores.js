@@ -1,21 +1,45 @@
-// scores.html
+// get the stored scores
 var storeScores = localStorage.getItem("quizScore");
-if (scoreData) {
-    scoreData = JSON.parse(scoreData);
+
+if (storeScores) {
+    var scoreData = JSON.parse(storeScores);
     var initials = scoreData.initials;
     var score = scoreData.score;
 
     console.log("Initials: " + initials);
-        console.log("Score: ", + score);
+    console.log("Score: " + score);
 }
 
 function highScores() {
-    // triggered when user submits their initals
-    // save score and initials in local storage
-            // read existing scores - var
-            // add new score - to the end of the existing scores var/array
-            // overwrite the scores with the new array (push, pop, etc - study)
-    // display high score page
-    //localStorage getItem
-}
+    var existingScores = localStorage.getItem("scores");
 
+    var newScore = {
+        initials: initials,
+        score: score,
+    };
+
+    if(existingScores) {
+        var scoresArr = JSON.parse(existingScores);
+
+        scoresArr.push(newScore);
+
+        scoresArr.sort(function (a, b) {
+            return b.score - a.score;
+        });
+
+        localStorage.setItem("scores", JSON.stringify(scoresArr));
+    } else {
+        var scoresArr = [newScore];
+
+        localStorage.setItem("scores", JSON.stringify(scoresArr));
+    }
+
+    var highScoresDisplay = document.querySelector("#high-scores");
+    highScoresDisplay.textContent = "";
+
+    for (var i = 0; i < scoresArr.length; i++) {
+        var scoreEntry = document.createElement("li");
+        scoreEntry.textContent = scoresArr[i].initials + ": " + scoresArr[i].score;
+        highScoresDisplay.appendChild(scoreEntry);
+    }
+}

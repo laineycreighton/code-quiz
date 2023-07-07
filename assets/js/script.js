@@ -78,8 +78,10 @@ function checkAnswer(event) {
 
     if (selectedChoiceIndex === currentQuestion.correctAnswer) {
         console.log("Correct answer!");
+
     } else {
         console.log("Incorrect answer!");
+
         //deduct 20 seconds from the timer
         timeLeft -= 20;
         if (timeLeft < 0) {
@@ -135,6 +137,7 @@ function endQuiz() {
         //redirect the user to the high scores page after submitting score
         window.location.href = "../html/scores.html";
     })
+
 }
 
 /*----------------------------------------START TIMER FUNCTION----------------------------------------*/
